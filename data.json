@@ -1,19 +1,20 @@
 {
-  "tagline": "Cortes con carácter. Acabados de precisión.",
-  "bio": "Tu barbería de confianza en Ponteareas.",
-  "phone": "+34986182505",
-  "whatsapp": "",
-  "email": "dlimabarbershop2026@gmail.com",
-  "address": "Av. Fermín Bouza Brey 1, Ponteareas",
-  "maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2957.0451353969765!2d-8.509139607599352!3d42.17071609698134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd258181c8cec1e9%3A0x651d87ffa4f31c3e!2sDlima%20Barbershop!5e0!3m2!1ses!2ses!4v1778432210264!5m2!1ses!2ses",
-  "seo": {
-    "title": "Dlima Barbershop · Ponteareas",
-    "description": "Barbería en Ponteareas. Reserva tu cita online en Booksy.",
-    "og_image": ""
+  "perfil": {
+    "tagline": "Cortes con carácter. Acabados de precisión.",
+    "bio": "Tu barbería de confianza en Ponteareas.",
+    "phone": "+34986182505",
+    "whatsapp": "",
+    "email": "dlimabarbershop2026@gmail.com",
+    "address": "Av. Fermín Bouza Brey 1, Ponteareas"
   },
   "appearance": {
     "accent_color": "#c1974f",
     "button_style": "glass"
+  },
+  "seo": {
+    "title": "Dlima Barbershop · Ponteareas",
+    "description": "Barbería en Ponteareas. Reserva tu cita online en Booksy.",
+    "og_image": ""
   },
   "socials": [
     { "title": "Llamar", "href": "tel:+34986182505", "type": "phone" },
@@ -63,6 +64,10 @@
       "custom_icon_url": ""
     }
   ],
+  "maps_section": {
+    "maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2957.0451353969765!2d-8.509139607599352!3d42.17071609698134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd258181c8cec1e9%3A0x651d87ffa4f31c3e!2sDlima%20Barbershop!5e0!3m2!1ses!2ses!4v1778432210264!5m2!1ses!2ses",
+    "address": "Av. Fermín Bouza Brey 1, Ponteareas"
+  },
   "schedule": {
     "mon_fri": "9:00–13:00 · 16:00–20:00",
     "saturday": "9:00–14:00",
