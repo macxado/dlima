@@ -119,6 +119,7 @@ collections:
               - label: "Imagen para compartir (og:image)"
                 name: og_image
                 widget: image
+                required: false
                 hint: "Se muestra al compartir en WhatsApp, Twitter, etc."
 
           # ── REDES ──────────────────────────────────────────────
@@ -177,6 +178,7 @@ collections:
               - label: "Logo oficial"
                 name: preset_icon
                 widget: select
+                required: false
                 hint: "Solo si elegiste 'Logo oficial' arriba"
                 options:
                   - { label: "Booksy", value: "booksy" }
@@ -192,6 +194,7 @@ collections:
               - label: "Imagen personalizada"
                 name: custom_icon_url
                 widget: image
+                required: false
                 hint: "Solo si elegiste 'Imagen personalizada' arriba. Sube un PNG o SVG cuadrado"
 
           # ── MAPA ───────────────────────────────────────────────
