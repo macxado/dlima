@@ -6,75 +6,103 @@ backend:
 media_folder: "."
 public_folder: "."
 
+locale: "es"
+
 collections:
   - name: "site"
     label: "Sitio web"
     files:
+
       - name: "data"
-        label: "Contenido de la página"
+        label: "🪒 Contenido de la página"
         file: "data.json"
         format: json
+        editor:
+          preview: true
         fields:
-          - label: "Tagline"
+
+          # ── IDENTIDAD ──────────────────────────────────────────
+          - label: "✏️ Tagline"
             name: tagline
             widget: string
-            hint: "Frase corta bajo el logo"
+            hint: "Frase corta que aparece bajo el logo"
 
-          - label: "Bio"
+          - label: "📝 Bio"
             name: bio
             widget: string
             hint: "Descripción breve de la barbería"
 
-          - label: "Teléfono"
+          # ── CONTACTO ───────────────────────────────────────────
+          - label: "📞 Teléfono"
             name: phone
             widget: string
+            hint: "Incluye el prefijo, ej: +34986182505"
 
-          - label: "Email"
+          - label: "💬 WhatsApp"
+            name: whatsapp
+            widget: string
+            required: false
+            hint: "Número con prefijo para abrir chat directo, ej: +34612345678 (deja vacío para no mostrar)"
+
+          - label: "✉️ Email"
             name: email
             widget: string
 
-          - label: "Dirección (texto)"
+          - label: "📍 Dirección (texto visible)"
             name: address
             widget: string
 
-          - label: "URL embed del mapa (Google Maps)"
+          # ── MAPA ───────────────────────────────────────────────
+          - label: "🗺️ URL embed del mapa"
             name: maps_embed
             widget: string
-            hint: "La URL que va dentro del iframe de Google Maps"
+            hint: "En Google Maps → Compartir → Insertar un mapa → copia la URL del src del iframe"
 
-          - label: "Redes sociales (iconos superiores)"
+          # ── REDES SOCIALES ─────────────────────────────────────
+          - label: "🔗 Iconos de redes (fila superior)"
             name: socials
             widget: list
+            summary: "{{fields.title}} — {{fields.href}}"
             fields:
-              - { label: "Título (tooltip)", name: title, widget: string }
-              - { label: "Enlace (href)", name: href, widget: string }
-              - label: "Tipo de icono"
+              - { label: "Nombre / tooltip", name: title, widget: string }
+              - { label: "Enlace (href)", name: href, widget: string, hint: "Usa tel:+34... para teléfono o mailto:... para email" }
+              - label: "Icono"
                 name: type
                 widget: select
                 options:
-                  - { label: "Teléfono", value: "phone" }
-                  - { label: "Instagram", value: "instagram" }
-                  - { label: "TikTok", value: "tiktok" }
-                  - { label: "Email", value: "email" }
+                  - { label: "📞 Teléfono", value: "phone" }
+                  - { label: "📸 Instagram", value: "instagram" }
+                  - { label: "🎵 TikTok", value: "tiktok" }
+                  - { label: "✉️ Email", value: "email" }
+                  - { label: "💬 WhatsApp", value: "whatsapp" }
+                  - { label: "▶️ YouTube", value: "youtube" }
+                  - { label: "👍 Facebook", value: "facebook" }
 
-          - label: "Links (botones principales)"
+          # ── LINKS / BOTONES ────────────────────────────────────
+          - label: "🔘 Botones principales"
             name: links
             widget: list
+            summary: "{{fields.name}}"
             fields:
-              - { label: "Subtítulo", name: sub, widget: string }
+              - { label: "Subtítulo (gris pequeño)", name: sub, widget: string }
               - { label: "Nombre del botón", name: name, widget: string }
               - { label: "Enlace (href)", name: href, widget: string }
               - label: "Icono"
                 name: icon
                 widget: select
                 options:
-                  - { label: "Calendario (Booksy)", value: "calendar" }
-                  - { label: "Instagram", value: "instagram" }
-                  - { label: "TikTok", value: "tiktok" }
-                  - { label: "Email", value: "email" }
-                  - { label: "Teléfono", value: "phone" }
+                  - { label: "📅 Calendario (Booksy)", value: "calendar" }
+                  - { label: "📸 Instagram", value: "instagram" }
+                  - { label: "🎵 TikTok", value: "tiktok" }
+                  - { label: "✉️ Email", value: "email" }
+                  - { label: "📞 Teléfono", value: "phone" }
+                  - { label: "💬 WhatsApp", value: "whatsapp" }
+                  - { label: "▶️ YouTube", value: "youtube" }
+                  - { label: "👍 Facebook", value: "facebook" }
+                  - { label: "⭐ Google Reviews", value: "google" }
 
-          - label: "Horario"
+          # ── HORARIO ────────────────────────────────────────────
+          - label: "🕐 Horario"
             name: schedule
             widget: object
             fields:
@@ -82,6 +110,7 @@ collections:
               - { label: "Sábado", name: saturday, widget: string, hint: "Ej: 9:00–14:00" }
               - { label: "Domingo cerrado", name: sunday_closed, widget: boolean, default: true }
 
-          - label: "Texto del pie de página"
+          # ── PIE ────────────────────────────────────────────────
+          - label: "📄 Texto del pie de página"
             name: footer
             widget: string
