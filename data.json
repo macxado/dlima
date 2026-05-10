@@ -52,9 +52,9 @@
       "sub": "Booksy",
       "name": "✂︎  Reserva tu cita",
       "href": "barberiadlkma.booksy.com/a",
-      "icon": "custom",
+      "icon": "preset",
       "preset_icon": "booksy",
-      "custom_icon_url": "https://play-lh.googleusercontent.com/EMsrhZzxL1SJDRsCUfY2NTAkQymK9v_rvhS4hEKfviw90LWJITrABOvWw6IgTGkfgbE"
+      "custom_icon_url": ""
     },
     {
       "enabled": true,
