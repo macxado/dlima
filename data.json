@@ -8,15 +8,15 @@
     "address": "Av. Fermín Bouza Brey 1, Ponteareas"
   },
   "appearance": {
-    "logo": "",
+    "logo": "img/logo.png",
     "accent_color": "#c1974f",
     "button_style": "glass"
   },
   "carousel": {
-    "img1": "",
-    "img2": "",
-    "img3": "",
-    "img4": ""
+    "img1": "img/bg1.jpg",
+    "img2": "img/bg2.jpg",
+    "img3": "img/bg3.jpg",
+    "img4": "img/bg4.jpg"
   },
   "seo": {
     "title": "Dlima Barbershop · Ponteareas",
