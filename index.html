@@ -614,8 +614,14 @@
       if (linksWrap && d.links) {
         var existingMap = linksWrap.querySelector('.map-wrap');
         linksWrap.innerHTML = d.links.map(function(l) {
+          var iconHtml;
+          if (l.icon === 'custom' && l.custom_icon_url) {
+            iconHtml = '<img src="' + l.custom_icon_url + '" style="width:22px;height:22px;object-fit:contain;" />';
+          } else {
+            iconHtml = ICONS[l.icon] || '';
+          }
           return '<a class="lnk" href="' + l.href + '" target="_blank" rel="noopener">'
-            + '<div class="lnk-icon">' + (ICONS[l.icon] || '') + '</div>'
+            + '<div class="lnk-icon">' + iconHtml + '</div>'
             + '<div class="lnk-body">'
             + '<div class="lnk-sub">' + l.sub + '</div>'
             + '<div class="lnk-name">' + l.name + '</div>'
