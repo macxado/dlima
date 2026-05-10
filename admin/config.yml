@@ -2,6 +2,7 @@ backend:
   name: github
   repo: macxado/dlima
   branch: main
+  site_domain: dlimabarbershop.netlify.app
 
 media_folder: "img"
 public_folder: "img"
