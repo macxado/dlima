@@ -3,8 +3,8 @@ backend:
   repo: macxado/dlima
   branch: main
 
-media_folder: "."
-public_folder: "."
+media_folder: "icons"
+public_folder: "icons"
 
 locale: "es"
 
@@ -14,58 +14,97 @@ collections:
     files:
 
       - name: "data"
-        label: "🪒 Contenido de la página"
+        label: "🪒 Dlima Barbershop"
         file: "data.json"
         format: json
         editor:
           preview: true
         fields:
 
-          # ── IDENTIDAD ──────────────────────────────────────────
-          - label: "✏️ Tagline"
-            name: tagline
-            widget: string
-            hint: "Frase corta que aparece bajo el logo"
+          # ── PERFIL ─────────────────────────────────────────────
+          - label: "Perfil"
+            name: "perfil"
+            widget: "object"
+            collapsed: false
+            summary: "Tagline, bio y contacto"
+            fields:
+              - label: "✏️ Tagline"
+                name: tagline
+                widget: string
+                hint: "Frase corta bajo el logo"
 
-          - label: "📝 Bio"
-            name: bio
-            widget: string
-            hint: "Descripción breve de la barbería"
+              - label: "📝 Bio"
+                name: bio
+                widget: string
+                hint: "Descripción breve de la barbería"
 
-          # ── CONTACTO ───────────────────────────────────────────
-          - label: "📞 Teléfono"
-            name: phone
-            widget: string
-            hint: "Incluye el prefijo, ej: +34986182505"
+              - label: "📞 Teléfono"
+                name: phone
+                widget: string
+                hint: "Con prefijo: +34986182505"
 
-          - label: "💬 WhatsApp"
-            name: whatsapp
-            widget: string
-            required: false
-            hint: "Número con prefijo para abrir chat directo, ej: +34612345678 (deja vacío para no mostrar)"
+              - label: "💬 WhatsApp"
+                name: whatsapp
+                widget: string
+                required: false
+                hint: "Con prefijo. Deja vacío para no mostrar"
 
-          - label: "✉️ Email"
-            name: email
-            widget: string
+              - label: "✉️ Email"
+                name: email
+                widget: string
 
-          - label: "📍 Dirección (texto visible)"
-            name: address
-            widget: string
+              - label: "📍 Dirección"
+                name: address
+                widget: string
 
-          # ── MAPA ───────────────────────────────────────────────
-          - label: "🗺️ URL embed del mapa"
-            name: maps_embed
-            widget: string
-            hint: "En Google Maps → Compartir → Insertar un mapa → copia la URL del src del iframe"
+          # ── APARIENCIA ─────────────────────────────────────────
+          - label: "🎨 Apariencia"
+            name: appearance
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Color de acento"
+                name: accent_color
+                widget: color
+                default: "#c1974f"
+                hint: "Color dorado de los bordes y detalles"
+              - label: "Estilo de botones"
+                name: button_style
+                widget: select
+                default: "glass"
+                options:
+                  - { label: "Cristal (actual)", value: "glass" }
+                  - { label: "Sólido", value: "solid" }
+                  - { label: "Outline", value: "outline" }
 
-          # ── REDES SOCIALES ─────────────────────────────────────
+          # ── SEO ────────────────────────────────────────────────
+          - label: "🔍 SEO y compartir"
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Título de la pestaña"
+                name: title
+                widget: string
+              - label: "Descripción (Google / WhatsApp preview)"
+                name: description
+                widget: text
+                hint: "Aparece cuando alguien comparte el enlace. Máx. 160 caracteres"
+              - label: "Imagen para compartir (og:image)"
+                name: og_image
+                widget: image
+                required: false
+                hint: "Se muestra al compartir en WhatsApp, Twitter, etc."
+
+          # ── REDES ──────────────────────────────────────────────
           - label: "🔗 Iconos de redes (fila superior)"
             name: socials
             widget: list
+            collapsed: true
             summary: "{{fields.title}} — {{fields.href}}"
             fields:
               - { label: "Nombre / tooltip", name: title, widget: string }
-              - { label: "Enlace (href)", name: href, widget: string, hint: "Usa tel:+34... para teléfono o mailto:... para email" }
+              - { label: "Enlace", name: href, widget: string, hint: "tel:+34... · mailto:... · https://..." }
               - label: "Icono"
                 name: type
                 widget: select
@@ -79,45 +118,84 @@ collections:
                   - { label: "👍 Facebook", value: "facebook" }
                   - { label: "⭐ Google", value: "google" }
 
-          # ── LINKS / BOTONES ────────────────────────────────────
-          - label: "🔘 Botones principales"
+          # ── LINKS ──────────────────────────────────────────────
+          - label: "🔘 Botones / Links"
             name: links
             widget: list
-            summary: "{{fields.name}}"
+            summary: "{{fields.enabled | ternary('✅','❌')}} {{fields.featured | ternary('⭐','  '}} {{fields.name}}"
             fields:
-              - { label: "Subtítulo (gris pequeño)", name: sub, widget: string }
-              - { label: "Nombre del botón", name: name, widget: string }
-              - { label: "Enlace (href)", name: href, widget: string }
-              - label: "Icono"
+              - label: "Activo"
+                name: enabled
+                widget: boolean
+                default: true
+                hint: "Desactiva para ocultar sin borrar"
+
+              - label: "⭐ Destacado"
+                name: featured
+                widget: boolean
+                default: false
+                hint: "Resalta este botón con borde dorado más intenso"
+
+              - { label: "Subtítulo (pequeño, gris)", name: sub, widget: string }
+              - { label: "Texto principal del botón", name: name, widget: string }
+              - { label: "Enlace (URL)", name: href, widget: string }
+
+              - label: "Tipo de icono"
                 name: icon
                 widget: select
+                default: "preset"
                 options:
-                  - { label: "📅 Calendario (Booksy)", value: "calendar" }
-                  - { label: "📸 Instagram", value: "instagram" }
-                  - { label: "🎵 TikTok", value: "tiktok" }
-                  - { label: "✉️ Email", value: "email" }
-                  - { label: "📞 Teléfono", value: "phone" }
-                  - { label: "💬 WhatsApp", value: "whatsapp" }
-                  - { label: "▶️ YouTube", value: "youtube" }
-                  - { label: "👍 Facebook", value: "facebook" }
-                  - { label: "⭐ Google Reviews", value: "google" }
-                  - { label: "🖼️ Personalizado (usar URL abajo)", value: "custom" }
-              - label: "URL icono personalizado"
-                name: custom_icon_url
-                widget: string
+                  - { label: "🖼️ Logo oficial (elegir abajo)", value: "preset" }
+                  - { label: "📁 Imagen personalizada (subir abajo)", value: "custom" }
+                  - { label: "Sin icono", value: "none" }
+
+              - label: "Logo oficial"
+                name: preset_icon
+                widget: select
                 required: false
-                hint: "Solo si elegiste 'Personalizado' arriba. Pega la URL de una imagen PNG/SVG (ej: de tu subida de media)"
+                hint: "Solo si elegiste 'Logo oficial' arriba"
+                options:
+                  - { label: "Booksy", value: "booksy" }
+                  - { label: "Instagram", value: "instagram" }
+                  - { label: "TikTok", value: "tiktok" }
+                  - { label: "WhatsApp", value: "whatsapp" }
+                  - { label: "YouTube", value: "youtube" }
+                  - { label: "Facebook", value: "facebook" }
+                  - { label: "Google Reviews", value: "google" }
+                  - { label: "Teléfono", value: "phone" }
+                  - { label: "Email", value: "email" }
+
+              - label: "Imagen personalizada"
+                name: custom_icon_url
+                widget: image
+                required: false
+                hint: "Solo si elegiste 'Imagen personalizada' arriba. Sube un PNG o SVG cuadrado"
+
+          # ── MAPA ───────────────────────────────────────────────
+          - label: "🗺️ Mapa"
+            name: maps_section
+            widget: object
+            collapsed: true
+            fields:
+              - label: "URL embed del mapa"
+                name: maps_embed
+                widget: string
+                hint: "Google Maps → Compartir → Insertar un mapa → copia la URL del src del iframe"
+              - label: "Texto de dirección"
+                name: address
+                widget: string
 
           # ── HORARIO ────────────────────────────────────────────
           - label: "🕐 Horario"
             name: schedule
             widget: object
+            collapsed: true
             fields:
               - { label: "Lunes a Viernes", name: mon_fri, widget: string, hint: "Ej: 9:00–13:00 · 16:00–20:00" }
               - { label: "Sábado", name: saturday, widget: string, hint: "Ej: 9:00–14:00" }
               - { label: "Domingo cerrado", name: sunday_closed, widget: boolean, default: true }
 
           # ── PIE ────────────────────────────────────────────────
-          - label: "📄 Texto del pie de página"
+          - label: "📄 Pie de página"
             name: footer
             widget: string

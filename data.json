@@ -6,6 +6,15 @@
   "email": "dlimabarbershop2026@gmail.com",
   "address": "Av. Fermín Bouza Brey 1, Ponteareas",
   "maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2957.0451353969765!2d-8.509139607599352!3d42.17071609698134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd258181c8cec1e9%3A0x651d87ffa4f31c3e!2sDlima%20Barbershop!5e0!3m2!1ses!2ses!4v1778432210264!5m2!1ses!2ses",
+  "seo": {
+    "title": "Dlima Barbershop · Ponteareas",
+    "description": "Barbería en Ponteareas. Reserva tu cita online en Booksy.",
+    "og_image": ""
+  },
+  "appearance": {
+    "accent_color": "#c1974f",
+    "button_style": "glass"
+  },
   "socials": [
     { "title": "Llamar", "href": "tel:+34986182505", "type": "phone" },
     { "title": "Instagram", "href": "https://www.instagram.com/dlima.barbershop", "type": "instagram" },
@@ -14,31 +23,43 @@
   ],
   "links": [
     {
+      "enabled": true,
+      "featured": true,
       "sub": "Booksy",
       "name": "✂︎  Reserva tu cita",
       "href": "https://booksy.com/es-es/177556_dlima-barbershop_barberia_67298_ponteareas",
-      "icon": "calendar",
+      "icon": "preset",
+      "preset_icon": "booksy",
       "custom_icon_url": ""
     },
     {
+      "enabled": true,
+      "featured": false,
       "sub": "Síguenos • Instagram",
       "name": "@dlima.barbershop",
       "href": "https://www.instagram.com/dlima.barbershop",
-      "icon": "instagram",
+      "icon": "preset",
+      "preset_icon": "instagram",
       "custom_icon_url": ""
     },
     {
+      "enabled": true,
+      "featured": false,
       "sub": "Síguenos • TikTok",
       "name": "@kamalbarber",
       "href": "https://www.tiktok.com/@kamalbarber",
-      "icon": "tiktok",
+      "icon": "preset",
+      "preset_icon": "tiktok",
       "custom_icon_url": ""
     },
     {
+      "enabled": true,
+      "featured": false,
       "sub": "Google · Reseñas",
       "name": "⭐ Déjanos tu opinión",
       "href": "https://search.google.com/local/writereview?placeid=ChIJ6cHOyIGBJQ0RPhzzpP-HHWU",
-      "icon": "google",
+      "icon": "preset",
+      "preset_icon": "google",
       "custom_icon_url": ""
     }
   ],
