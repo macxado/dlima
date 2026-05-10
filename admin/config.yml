@@ -1,0 +1,87 @@
+backend:
+  name: github
+  repo: macxado/dlima
+  branch: main
+
+media_folder: "."
+public_folder: "."
+
+collections:
+  - name: "site"
+    label: "Sitio web"
+    files:
+      - name: "data"
+        label: "Contenido de la página"
+        file: "data.json"
+        format: json
+        fields:
+          - label: "Tagline"
+            name: tagline
+            widget: string
+            hint: "Frase corta bajo el logo"
+
+          - label: "Bio"
+            name: bio
+            widget: string
+            hint: "Descripción breve de la barbería"
+
+          - label: "Teléfono"
+            name: phone
+            widget: string
+
+          - label: "Email"
+            name: email
+            widget: string
+
+          - label: "Dirección (texto)"
+            name: address
+            widget: string
+
+          - label: "URL embed del mapa (Google Maps)"
+            name: maps_embed
+            widget: string
+            hint: "La URL que va dentro del iframe de Google Maps"
+
+          - label: "Redes sociales (iconos superiores)"
+            name: socials
+            widget: list
+            fields:
+              - { label: "Título (tooltip)", name: title, widget: string }
+              - { label: "Enlace (href)", name: href, widget: string }
+              - label: "Tipo de icono"
+                name: type
+                widget: select
+                options:
+                  - { label: "Teléfono", value: "phone" }
+                  - { label: "Instagram", value: "instagram" }
+                  - { label: "TikTok", value: "tiktok" }
+                  - { label: "Email", value: "email" }
+
+          - label: "Links (botones principales)"
+            name: links
+            widget: list
+            fields:
+              - { label: "Subtítulo", name: sub, widget: string }
+              - { label: "Nombre del botón", name: name, widget: string }
+              - { label: "Enlace (href)", name: href, widget: string }
+              - label: "Icono"
+                name: icon
+                widget: select
+                options:
+                  - { label: "Calendario (Booksy)", value: "calendar" }
+                  - { label: "Instagram", value: "instagram" }
+                  - { label: "TikTok", value: "tiktok" }
+                  - { label: "Email", value: "email" }
+                  - { label: "Teléfono", value: "phone" }
+
+          - label: "Horario"
+            name: schedule
+            widget: object
+            fields:
+              - { label: "Lunes a Viernes", name: mon_fri, widget: string, hint: "Ej: 9:00–13:00 · 16:00–20:00" }
+              - { label: "Sábado", name: saturday, widget: string, hint: "Ej: 9:00–14:00" }
+              - { label: "Domingo cerrado", name: sunday_closed, widget: boolean, default: true }
+
+          - label: "Texto del pie de página"
+            name: footer
+            widget: string

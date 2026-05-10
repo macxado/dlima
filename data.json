@@ -1,0 +1,40 @@
+{
+  "tagline": "Cortes con carácter. Acabados de precisión.",
+  "bio": "Tu barbería de confianza en Ponteareas.",
+  "phone": "+34986182505",
+  "email": "dlimabarbershop2026@gmail.com",
+  "address": "Av. Fermín Bouza Brey 1, Ponteareas",
+  "maps_embed": "https://maps.google.com/maps?q=Av.+Fermin+Bouza+Brey+1,+36860+Ponteareas,+Galicia,+Spain&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  "socials": [
+    { "title": "Llamar", "href": "tel:+34986182505", "type": "phone" },
+    { "title": "Instagram", "href": "https://www.instagram.com/dlima.barbershop", "type": "instagram" },
+    { "title": "TikTok", "href": "https://www.tiktok.com/@kamalbarber", "type": "tiktok" },
+    { "title": "Email", "href": "mailto:dlimabarbershop2026@gmail.com", "type": "email" }
+  ],
+  "links": [
+    {
+      "sub": "Booksy",
+      "name": "✂︎  Reserva tu cita",
+      "href": "https://booksy.com/es-es/177556_dlima-barbershop_barberia_67298_ponteareas",
+      "icon": "calendar"
+    },
+    {
+      "sub": "Síguenos • Instagram",
+      "name": "@dlima.barbershop",
+      "href": "https://www.instagram.com/dlima.barbershop",
+      "icon": "instagram"
+    },
+    {
+      "sub": "Síguenos • TikTok",
+      "name": "@kamalbarber",
+      "href": "https://www.tiktok.com/@kamalbarber",
+      "icon": "tiktok"
+    }
+  ],
+  "schedule": {
+    "mon_fri": "9:00–13:00 · 16:00–20:00",
+    "saturday": "9:00–14:00",
+    "sunday_closed": true
+  },
+  "footer": "Dlima Barbershop · Ponteareas"
+}
