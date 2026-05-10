@@ -17,10 +17,26 @@
     "og_image": ""
   },
   "socials": [
-    { "title": "Llamar", "href": "tel:+34986182505", "type": "phone" },
-    { "title": "Instagram", "href": "https://www.instagram.com/dlima.barbershop", "type": "instagram" },
-    { "title": "TikTok", "href": "https://www.tiktok.com/@kamalbarber", "type": "tiktok" },
-    { "title": "Email", "href": "mailto:dlimabarbershop2026@gmail.com", "type": "email" }
+    {
+      "title": "Llamar",
+      "href": "tel:+34986182505",
+      "type": "phone"
+    },
+    {
+      "title": "Instagram",
+      "href": "https://www.instagram.com/dlima.barbershop",
+      "type": "instagram"
+    },
+    {
+      "title": "TikTok",
+      "href": "https://www.tiktok.com/@kamalbarber",
+      "type": "tiktok"
+    },
+    {
+      "title": "Email",
+      "href": "mailto:dlimabarbershop2026@gmail.com",
+      "type": "email"
+    }
   ],
   "links": [
     {
@@ -29,9 +45,9 @@
       "sub": "Booksy",
       "name": "✂︎  Reserva tu cita",
       "href": "https://booksy.com/es-es/177556_dlima-barbershop_barberia_67298_ponteareas",
-      "icon": "preset",
+      "icon": "custom",
       "preset_icon": "booksy",
-      "custom_icon_url": ""
+      "custom_icon_url": "https://play-lh.googleusercontent.com/EMsrhZzxL1SJDRsCUfY2NTAkQymK9v_rvhS4hEKfviw90LWJITrABOvWw6IgTGkfgbE"
     },
     {
       "enabled": true,
