@@ -63,11 +63,18 @@ collections:
             widget: object
             collapsed: true
             fields:
+              - label: "Logo principal"
+                name: logo
+                widget: image
+                required: false
+                hint: "Sube un PNG transparente. Deja vacío para usar el logo por defecto"
+
               - label: "Color de acento"
                 name: accent_color
                 widget: color
                 default: "#c1974f"
                 hint: "Color dorado de los bordes y detalles"
+
               - label: "Estilo de botones"
                 name: button_style
                 widget: select
@@ -76,6 +83,30 @@ collections:
                   - { label: "Cristal (actual)", value: "glass" }
                   - { label: "Sólido", value: "solid" }
                   - { label: "Outline", value: "outline" }
+
+          # ── CAROUSEL ───────────────────────────────────────────
+          - label: "🖼️ Fotos de fondo (carrusel)"
+            name: carousel
+            widget: object
+            collapsed: true
+            hint: "Las 4 fotos que rotan como fondo de pantalla"
+            fields:
+              - label: "Foto 1"
+                name: img1
+                widget: image
+                required: false
+              - label: "Foto 2"
+                name: img2
+                widget: image
+                required: false
+              - label: "Foto 3"
+                name: img3
+                widget: image
+                required: false
+              - label: "Foto 4"
+                name: img4
+                widget: image
+                required: false
 
           # ── SEO ────────────────────────────────────────────────
           - label: "🔍 SEO y compartir"
@@ -122,7 +153,7 @@ collections:
           - label: "🔘 Botones / Links"
             name: links
             widget: list
-            summary: "{{fields.enabled | ternary('✅','❌')}} {{fields.featured | ternary('⭐','  '}} {{fields.name}}"
+            summary: "{{fields.name}} — {{fields.sub}}"
             fields:
               - label: "Activo"
                 name: enabled
